@@ -10,7 +10,7 @@ search_key = os.getenv("SEARCH_KEY")
 subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
 
 
-st.sidebar.title("Navigation Of Site")
+st.sidebar.title("Navigation")
 st.sidebar.markdown("**Select an option:**")
 option = st.sidebar.radio("", ["Consult", "Clinical History Query"])
 
@@ -32,7 +32,7 @@ if option == "Consult":
         
 
     # Code for the consulta section
-    st.title("Nursing Admission Assistant with Azure OpenAI")
+    st.title("Nursing Admission Assistant with Azure OpenAI DEMO")
     st.text("Try it using some of the following queries:")
     st.table(
         [
