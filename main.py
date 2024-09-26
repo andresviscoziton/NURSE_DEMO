@@ -25,9 +25,9 @@ if option == "Admission Assistance":
         api_key=subscription_key,
         api_version="2024-05-01-preview",
         )
-        #st.write("Client initialized")
+        st.write("Client initialized")
     else:
-        #st.write("Client already initialized")
+        st.write("Client already initialized")
 
         
 
@@ -103,9 +103,9 @@ elif option == "Clinical History Query":
         api_key=subscription_key,
         api_version="2024-05-01-preview",
         )
-        #st.write("Client initialized")
+        st.write("Client initialized")
     else:
-        #st.write("Client already initialized")
+        st.write("Client already initialized")
     # Code for the empty section
     st.title("Clinical History Query")
     st.text("Try it using some of the following patient names:")
