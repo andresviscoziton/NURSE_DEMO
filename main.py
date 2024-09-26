@@ -25,9 +25,9 @@ if option == "Admission Assistance":
         api_key=subscription_key,
         api_version="2024-05-01-preview",
         )
-        st.write("Client initialized")
+        #st.write("Client initialized")
     else:
-        st.write("Client already initialized")
+        #st.write("Client already initialized")
 
         
 
@@ -43,7 +43,7 @@ if option == "Admission Assistance":
          ]
         ) 
             
-    consulta = st.text_input("Enter your query:", placeholder="Describe your query here")
+    consulta = st.text_input("Ask me question regarding patient admissions:", placeholder="Enter your question here")
 
     if consulta:
         
@@ -93,8 +93,7 @@ if option == "Admission Assistance":
         message_content = completion.choices[0].message.content
         # Display the result in the Streamlit app
         st.subheader("Assistant Response:")
-        
-        st.text_area("Result", value=message_content, height=300)
+        st.markdown(message_content)
 
     # ... your code for the consulta section ...
 elif option == "Clinical History Query":
@@ -104,12 +103,12 @@ elif option == "Clinical History Query":
         api_key=subscription_key,
         api_version="2024-05-01-preview",
         )
-        st.write("Client initialized")
+        #st.write("Client initialized")
     else:
-        st.write("Client already initialized")
+        #st.write("Client already initialized")
     # Code for the empty section
     st.title("Clinical History Query")
-    st.text("Try it using some of the following queries:")
+    st.text("Try it using some of the following patient names:")
     st.table(
         [
             'María Fernandez',
@@ -118,7 +117,7 @@ elif option == "Clinical History Query":
             'Ana García'
          ]
         ) 
-    consulta_ch = st.text_input("Pacient: ", placeholder="Describe your query here")
+    consulta_ch = st.text_input("Enter the name of a ptient to find the history: ", placeholder="Patient name")
     if consulta_ch:
         
     # Initialize Azure OpenAI client with key-based authentication
@@ -137,7 +136,7 @@ elif option == "Clinical History Query":
             },
             {
                 "role": "user",
-                "content": "Necesito busques la historía clínica del paciente: "+str(consulta_ch)+""
+                "content": "Necesito busques la historía clínica del patiente: "+str(consulta_ch)+""
             }
             ],
             max_tokens=800,
