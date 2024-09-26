@@ -32,7 +32,7 @@ if option == "Admission Assistance":
         
 
     # Code for the consulta section
-    st.title("Nursing Admission Assistant with Azure OpenAI DEMO")
+    st.title("Nursing Admission Assistant with Azure OpenAI")
     st.text("Try it using some of the following queries:")
     st.table(
         [
