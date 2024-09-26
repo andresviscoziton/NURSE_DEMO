@@ -12,7 +12,7 @@ subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
 
 st.sidebar.title("Navigation")
 st.sidebar.markdown("**Select an option:**")
-option = st.sidebar.radio("", ["Consult", "Clinical History Query"])
+option = st.sidebar.radio("", ["Admission Assistance", "Clinical History Query"])
 
 if 'client' not in st.session_state:
     st.session_state.client = None
