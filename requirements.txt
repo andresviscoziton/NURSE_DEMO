@@ -3,3 +3,5 @@ azure.storage.blob
 azure.core
 azure.search.documents
 openai
+PIL
+time
