@@ -61,6 +61,13 @@ st.markdown(
             margin-top: 10px;
             margin-bottom: 30px;
         }
+        .stMarkdown {
+            color: #333333;
+        }
+        .stTextInput>div>input {
+            color: #333333;
+            background-color: #ffffff;
+        }
         @media screen and (max-width: 768px) {
             .header {
                 font-size: 24px;
