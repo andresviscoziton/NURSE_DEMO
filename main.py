@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from openai import AzureOpenAI
-from PIL import Image
+from urllib import request
 import time
 
 # Environment variables for Azure OpenAI
@@ -15,7 +15,8 @@ subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
 st.set_page_config(page_title="Nurse Assistant", page_icon="🏥", layout="wide", initial_sidebar_state="expanded")
 
 # Load and display the logo
-logo = Image.open('nurse.231x256.png')
+logo_url = 'https://ziton.ca/hubfs/ziton-logo.svg'
+logo = request.urlopen(logo_url)
 col1, col2 = st.columns([1, 4])
 with col1:
     st.image(logo, width=100)
@@ -91,7 +92,7 @@ st.markdown(
 with st.sidebar:
     st.header("AI Nursing Assistant")
     st.markdown("**Select an option:**")
-    option = st.radio("", ["Admission Assistance", "Clinical History Query"])
+    option = st.radio("Select an option:", ["Admission Assistance", "Clinical History Query"], label_visibility='collapsed')
 
 # Main chat UI
 def main():
