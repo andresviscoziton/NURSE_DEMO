@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 from openai import AzureOpenAI
-from urllib import request
+from PIL import Image
 import time
 
 # Environment variables for Azure OpenAI
@@ -15,8 +15,7 @@ subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
 st.set_page_config(page_title="Nurse Assistant", page_icon="🏥", layout="wide", initial_sidebar_state="expanded")
 
 # Load and display the logo
-logo_url = 'https://ziton.ca/hubfs/ziton-logo.svg'
-logo = request.urlopen(logo_url)
+logo = Image.open('nurse.231x256.png')
 col1, col2 = st.columns([1, 4])
 with col1:
     st.image(logo, width=100)
