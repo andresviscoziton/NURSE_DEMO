@@ -15,7 +15,7 @@ subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
 st.set_page_config(page_title="Nurse Assistant", page_icon="🏥", layout="wide", initial_sidebar_state="expanded")
 
 # Load and display the logo
-logo = Image.open('path/to/your/logo.png')
+logo = Image.open('nurse.231x256.png')
 col1, col2 = st.columns([1, 4])
 with col1:
     st.image(logo, width=100)
