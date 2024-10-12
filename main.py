@@ -15,23 +15,28 @@ subscription_key = os.getenv("AZURE_OPENAI_API_KEY")
 st.set_page_config(page_title="Nurse Assistant", page_icon="🏥", layout="wide", initial_sidebar_state="expanded")
 
 # Load and display the logo
-logo = Image.open('nurse.231x256.png')
+# logo = Image.open('nurse.231x256.png')
+logo = Image.open('transparent-nurse-icon-healthcare-and-medical-icon-medicine-ic-5fb5e6d93162a6.0809276416057566332023.png')
 col1, col2 = st.columns([1, 4])
-with col1:
-    st.image(logo, width=100)
 with col2:
     st.title("Nurse Assistant Chatbot")
+
 
 # Set up color scheme and modern UI elements
 st.markdown(
     """
     <style>
+        div[data-testid="stImage"] {margin: 0 auto;}
+        button[data-testid="StyledFullScreenButton"] {
+        display: none;
+        }
+
         body {
-            background-color: #f5f5f5;
+            background-color: black;
         }
         .stApp {
             font-family: "Arial", sans-serif;
-            background-color: #ffffff;
+            background-color: black;
             border-radius: 15px;
             padding: 20px;
             max-width: 95%;
@@ -96,6 +101,7 @@ st.markdown(
 
 # Sidebar for additional information
 with st.sidebar:
+    st.image(logo, width=100)
     st.header("AI Nursing Assistant")
     st.markdown("**Select an option:**")
     option = st.radio("Select an option:", ["Admission Assistance", "Clinical History Query"], label_visibility='collapsed')
